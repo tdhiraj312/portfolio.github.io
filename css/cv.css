@@ -1,0 +1,22 @@
+.btn {
+    background-color: DodgerBlue;
+    border-radius: 2px;
+    color: white;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 100px;
+  }
+
+  .resume{
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+  .certificates{
+    padding-bottom: 10px;
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: RoyalBlue;
+  }
