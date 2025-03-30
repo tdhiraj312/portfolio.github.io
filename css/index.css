@@ -1,0 +1,171 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 ;
+    font-family: GT America;/* "Lato", sans-serif;*/
+    color: #777;
+  }
+  
+  nav{font: normal 16px GT America;}
+  
+  .navbar{font: normal 16px GT America;}
+  
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .image:hover {
+    opacity: 0.3;
+  }
+  
+  .image1 {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .image1:hover {
+    opacity: 0.01;
+  }
+
+  #fav{
+    padding-left: 8px;
+    padding-top: 7px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    position: relative;
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bgimg-1 {
+    background-image:url("../img/Dhiraj.jpg");
+    min-height: 100%;  
+  }
+  
+  .bgimg-2 {
+    background-image: url("../img/sea4.jpg");
+    min-height: 400px;
+  }
+  
+  .bgimg-3 {
+    background-image: url("../img/sea9.jpg");
+    min-height: 400px;
+  }
+  
+  .caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+  }
+  
+  .caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+  }
+  
+  h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    color: #111;
+    text-align:center;
+  }
+  
+  .w-3-large {
+    margin-top: 5px;
+    float: right;
+    padding: 10px;
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    color: whitesmoke;
+    cursor: pointer;
+  }
+  
+  .w-4-large{
+    margin-top: 5px;
+    float: right;
+    padding: 10px;
+  }
+  
+  .w-3-large:hover {
+    opacity: 0.3;
+  }
+
+  .aboutme
+  {
+    text-align: justify;
+    padding:50px 80px;
+    text-align:center;
+    background-color: white;
+    color:#777;
+  }
+
+  #para1{
+    position:relative;
+    padding:50px 50px;
+    text-align: left;
+    text-align: justify;
+    background-color: white;
+    color: #777;
+  }
+
+  .extramotivation{
+      background-color:transparent; 
+      font-size:33px; 
+      color: #f7f7f7;
+  }  
+
+  #para2{
+    position:relative;
+    background-color:#f7f7f7;
+    color: #777;
+    padding:50px 50px;
+    text-align: justify;
+    text-align: left;
+    
+    
+  }
+  
+  /* Turn off parallax scrolling for tablets and phones */
+  @media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+      background-attachment: scroll;
+    }
+  
+    #trick{padding-left: 5px;}
+    
+    
+  }
+  
+  #footer{
+    color: white;
+  }
+
+  @media(max-width:800px){
+  .w-3-large,.w-4-large,.w-5-large{
+      visibility: hidden;
+    }
+    }
