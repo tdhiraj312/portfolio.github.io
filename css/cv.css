@@ -1,6 +1,5 @@
 .btn {
     background-color: DodgerBlue;
-    border-radius: 2px;
     color: white;
     padding: 8px 20px;
     cursor: pointer;
@@ -46,13 +45,15 @@
 }
 
 #img{
-	padding-bottom: 50px;
+	padding-bottom: 60px;
+  padding-left: 35px;
+  padding-top: 25px;
 }
 
 .image {
   opacity: 1;
   display: block;
-  width: 90%;
+  width: 100%;
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
