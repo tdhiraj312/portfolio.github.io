@@ -1,0 +1,199 @@
+/* ===============================
+   BASE
+================================ */
+html, body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+/* ===============================
+   SMOOTH MODE TRANSITION
+================================ */
+body,
+.showcase-wrapper {
+  transition: 
+    background-color 0.6s ease,
+    color 0.6s ease,
+    filter 0.6s ease;
+}
+
+
+/* ===============================
+   LIGHT MODE
+================================ */
+body.light-mode {
+  background-color: #f7f7f8 !important;
+  color: #000 !important;
+}
+
+/* Sun glow navbar */
+body.light-mode .navbar {
+  background: linear-gradient(90deg, #0a0a0a, #ff5f03) !important;
+  box-shadow: 0 0 25px rgba(255,183,3,0.8);
+}
+
+/* ===============================
+   DARK MODE
+================================ */
+body.dark-mode {
+  background-color: #030303 !important;
+  color: #fdfcfc !important;
+}
+/* KEEP NAVBAR SAME AS SITE DEFAULT */
+/* .navbar {
+  background-color: #222 !important;   /* same as Bootstrap inverse */
+  /* box-shadow: none !important; */
+/* } */ */
+
+
+
+/* ===============================
+   DARK MODE NAVBAR GLOW (FIXED)
+================================ */
+body.dark-mode .navbar.navbar-inverse {
+  background: linear-gradient(90deg, #2c66ee, #30b2ee) !important;
+  box-shadow: 0 0 30px rgba(76, 122, 247, 0.8);
+  border: none !important;
+}
+
+/* remove inverse border completely */
+body.dark-mode .navbar-inverse {
+  border-color: transparent !important;
+}
+
+
+/* ===============================
+   MODE ICON
+================================ */
+#modeToggle i {
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#modeToggle:hover i {
+  transform: rotate(20deg);
+}
+/* ===============================
+   STAR FALL EFFECT — CORRECT WAY
+   (BODY BACKGROUND LAYER)
+================================ */
+/* ===============================
+   STAR FALL EFFECT — PERFORMANCE SAFE
+================================ */
+body.dark-mode::before,
+body.dark-mode::after {
+  content: "";
+  position: fixed;
+  inset: -200% 0 0 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(2px 2px at 20px 20px, rgba(255,255,255,0.9) 60%, transparent 61%),
+    radial-gradient(1.5px 1.5px at 80px 80px, rgba(255,255,255,0.7) 60%, transparent 61%);
+  background-size: 160px 160px;
+  background-repeat: repeat;
+
+  animation: starFallGPU 120s linear infinite;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* second layer for density */
+body.dark-mode::after {
+  animation-duration: 180s;
+  opacity: 0.6;
+}
+
+/* GPU-accelerated falling */
+@keyframes starFallGPU {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 66%, 0);
+  }
+}
+
+
+/* ===============================
+   CONTENT ABOVE STARS
+================================ */
+.navbar,
+.container,
+.showcase-wrapper,
+#modal {
+  position: relative;
+  z-index: 2;
+}
+/* MODE TOGGLE BUTTON (BOOTSTRAP SAFE) */
+.mode-btn {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.mode-btn:focus {
+  outline: none;
+}
+/* ENSURE TOGGLE RECEIVES CLICKS */
+#modeToggle {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 9999;
+}
+
+/* ===============================
+   SHOOTING STAR — GPU SAFE
+================================ */
+
+/* shooting star container */
+body.dark-mode::after {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: -20%;
+  width: 120%;
+  height: 120%;
+  pointer-events: none;
+  z-index: 0;
+
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(
+      120deg,
+      rgba(255,255,255,0) 40%,
+      rgba(255,255,255,0.9) 50%,
+      rgba(255,255,255,0) 60%
+    );
+
+  background-size: 300px 2px;
+  opacity: 0;
+
+  animation: shootingStar 9s linear infinite;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+/* shooting star animation */
+@keyframes shootingStar {
+  0% {
+    transform: translate3d(-30vw, -30vh, 0);
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  15% {
+    transform: translate3d(120vw, 120vh, 0);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(120vw, 120vh, 0);
+  }
+}

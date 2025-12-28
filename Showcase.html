@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My JavaScript Projects</title>
+
+  <!-- Bootstrap 3 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="Showcase.css">
+
+  <!-- Dark / Light -->
+  <link rel="stylesheet" href="./Project/common/Dark_Light_theme.css">
+</head>
+
+<body class="light-mode">
+<div class="star-layer"></div>
+<div class="shooting-star"></div>
+
+
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#mainNav">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- LOGO (FIXED POSITION) -->
+      <a class="navbar-brand" href="index.html">
+        <img id="fav" src="img/LOGO DHIRAJ.jpg" alt="DT Logo">
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+
+      <!-- LEFT MENU -->
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="myPortfolio.html">PROJECTS</a></li>
+        <li><a href="blog.html">BLOGS</a></li>
+        <li><a href="myCV.html">RESUME</a></li>
+        <li><a href="milestones.html">MILESTONES</a></li>
+        <li class="active"><a href="Showcase.html">SHOWCASE</a></li>
+      </ul>
+
+      <!-- RIGHT CORNER -->
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <button id="modeToggle" class="mode-btn" aria-label="Toggle theme">
+                  <i id="modeIcon" class="fa-solid fa-moon"></i>
+          </button>
+
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="container showcase-wrapper">
+
+  <h1 class="title">JavaScript Projects</h1>
+
+  <input type="text" id="search" placeholder="Search projects...">
+
+  <!-- PROJECTS COME FROM Showcase.js -->
+  <div id="project-container"></div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal">
+  <div class="modal-content">
+    <span id="close-btn">&times;</span>
+    <iframe id="preview-frame"></iframe>
+  </div>
+</div>
+
+<!-- MODE LOCK POPUP -->
+<div id="modePopup" class="mode-popup">
+  <div class="mode-popup-box">
+    <p>Please close the preview to switch modes</p>
+    <button id="popupOk">OK</button>
+  </div>
+</div>
+
+
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script src="Showcase.js"></script>
+<script src="Project/common/theme.js"></script>
+
+</body>
+</html>
