@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+   <link rel="stylesheet" href="../common/theme.css">
+  <style>
+    body { font-family: Arial; margin:8px;
+   
+    padding:0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    }
+    form { width: 300px; margin-bottom: 40px; text-align: left; }
+    input { width: 100%; padding: 8px; margin: 10px 0; font-size: 16px; }
+    button { padding: 10px; font-size: 16px; width: 100%; }
+    p { color: red; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="game-box">
+  <h2 style="text-align:center;">📝 Form Validator</h2>
+  
+  <form id="myForm">
+    <label>Name:</label>
+    <input type="text" id="name" placeholder="Enter your name">
+    <p id="nameError"></p>
+
+    <label>Email:</label>
+    <input type="text" id="email" placeholder="Enter your email">
+    <p id="emailError"></p>
+
+    <label>Password:</label>
+    <input type="password" id="password" placeholder="Enter password">
+    <p id="passwordError"></p>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Stop the page from reloading
+
+      // Getting values
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value;
+
+      // Error elements
+      let nameError = document.getElementById("nameError");
+      let emailError = document.getElementById("emailError");
+      let passwordError = document.getElementById("passwordError");
+
+      // Reset old errors
+      nameError.textContent = "";
+      emailError.textContent = "";
+      passwordError.textContent = "";
+
+      let valid = true;
+
+      // Name validation
+      if (name === "") {
+        nameError.textContent = "⚠️ Name is required!";
+        valid = false;
+      }
+
+      // Email validation (simple regex)
+      if (!email.includes("@") || !email.includes(".")) {
+        emailError.textContent = "⚠️ Invalid email format!";
+        valid = false;
+      }
+
+      // Password validation
+      if (password.length < 6) {
+        passwordError.textContent = "⚠️ Password must be at least 6 characters long!";
+        valid = false;
+      }
+
+      if (valid) {
+        alert("✅ Form submitted successfully!");
+        document.getElementById("myForm").reset();
+      }
+    });
+  </script>
+</body>
+</html>

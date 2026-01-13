@@ -11,16 +11,20 @@
 
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="css/cv.css">
+
+    <!-- Dark / Light -->
+    <link rel="stylesheet" href="./Project/common/Dark_Light_theme.css">
 </head>
 <style>
 
 </style>
-<body class="w3-light-grey">
+<body class="light-mode w3-light-grey">
+
 
   <!--Navbar-->
-<div class="container">
+
   <nav class="navbar navbar-inverse navbar-fixed-top">
 
     <div class="container-fluid">
@@ -37,13 +41,24 @@
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                   <li class="w3-center"><a href="index.html">HOME</a></li>
-                  <li class="w3-center"><a href="about.html">ABOUT</a></li> 
-                  <li class="w3-center"><a href="contact.html">CONTACT</a></li>  
+                  <li class="w3-center"><a href="about.html">ABOUT</a></li>
+                  <li class="w3-center"><a href="contact.html">CONTACT</a></li>
                 </ul><ul class="nav navbar-nav">
                   <li class="w3-center"><a href="myPortfolio.html">PROJECTS</a></li>
                   <li class="w3-center"><a href="blog.html">BLOGS</a></li>
                   <li class="w3-center"><a href="myCV.html">RESUME</a></li>
-                  <li class="w3-center"><a href="milestones.html">MILESTONES</a></li>     
+                  <li class="w3-center"><a href="milestones.html">MILESTONES</a></li>
+                   <li class="w3-center"><a href="Showcase.html">SHOWCASE</a></li>
+                </ul>
+
+                <!-- RIGHT CORNER -->
+                <ul class="nav navbar-nav navbar-right">
+                  <li>
+                    <button id="modeToggle" class="mode-btn" aria-label="Toggle theme">
+                     <i id="modeIcon" class="fa fa-moon-o"></i>
+
+                    </button>
+                  </li>
                 </ul>
               </div>
     </div>
@@ -65,10 +80,10 @@
           <!--ZoomEffect-->
               <!--Zoom effect-->
               <div class="view overlay zoom">
-                  <img id="img" src="img/resume 2.png" style="width:90%" class="img-fluid" alt="smaple image">
+                  <img id="img" src="img/cropped_circle_image.png" style="width:90%" class="img-fluid" alt="smaple image">
               </div>
           <!--EndZoomEffect-->
-
+                <br>
           <!--Dhiraj Thakur-->
           <div class="w3-display-bottomleft w3-container w3-text-black">
             <h2 id="name">Dhiraj Thakur</h2>
@@ -207,7 +222,76 @@
 </footer>
 
 <!--JavaScriptLinks-->
+
+<script>
+  const img = document.getElementById("img");
+
+  // Run only on non-touch devices
+  if (window.matchMedia("(pointer: fine)").matches) {
+
+    document.addEventListener("mousemove", (e) => {
+      const rect = img.getBoundingClientRect();
+
+      const imgCenterX = rect.left + rect.width / 2;
+      const imgCenterY = rect.top + rect.height / 2;
+
+      const dx = e.clientX - imgCenterX;
+      const dy = e.clientY - imgCenterY;
+
+      const maxDistance = window.innerWidth / 2;
+
+      const rotateY = (dx / maxDistance) * 20;
+      const rotateX = (-dy / maxDistance) * 20;
+
+      img.style.transform =
+        `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+      img.style.boxShadow =
+        `${-rotateY * 2}px ${rotateX * 2}px 25px rgba(0,0,0,0.35)`;
+
+      // Cursor-follow glow
+      const gx = ((dx / rect.width) * 50) + 50;
+      const gy = ((dy / rect.height) * 50) + 50;
+
+      img.style.setProperty("--gx", `${gx}%`);
+      img.style.setProperty("--gy", `${gy}%`);
+    });
+
+    // Reset when cursor leaves window
+    document.addEventListener("mouseleave", () => {
+      img.style.transform = "rotateX(0deg) rotateY(0deg)";
+      img.style.boxShadow = "0 10px 22px rgba(0,0,0,0.25)";
+      img.style.setProperty("--gx", "50%");
+      img.style.setProperty("--gy", "50%");
+    });
+  }
+</script>
+
+<script>
+let lastX = 50, lastY = 50;
+let ticking = false;
+
+document.addEventListener("mousemove", e => {
+  lastX = e.clientX;
+  lastY = e.clientY;
+
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      document.documentElement.style.setProperty("--mx", lastX + "px");
+      document.documentElement.style.setProperty("--my", lastY + "px");
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+</script>
+
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script src="Project/common/theme.js"></script>
 </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="../common/theme.css">
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 10px;overflow:hidden;}
+    input, select, button { padding: 10px; margin: 5px; font-size: 18px; }
+    #result { margin-top: 20px; font-size: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>🌡️ Temperature Converter</h2>
+  <input type="number" id="tempInput" placeholder="Enter temperature">
+  <select id="scale">
+    <option value="C">Celsius → Fahrenheit</option>
+    <option value="F">Fahrenheit → Celsius</option>
+  </select>
+  <button onclick="convertTemp()">Convert</button>
+  <div id="result"></div>
+
+  <script>
+    function convertTemp() {
+      let input = document.getElementById("tempInput").value;
+      let scale = document.getElementById("scale").value;
+      let resultBox = document.getElementById("result");
+
+      if (input === "") {
+        resultBox.textContent = "⚠️ Please enter a temperature!";
+        resultBox.style.color = "red";
+        return;
+      }
+
+      let result;
+      if (scale === "C") {
+        result = (input * 9/5) + 32;
+        resultBox.textContent = `${input}°C = ${result.toFixed(2)}°F`;
+      } else {
+        result = (input - 32) * 5/9;
+        resultBox.textContent = `${input}°F = ${result.toFixed(2)}°C`;
+      }
+
+      resultBox.style.color = "black";
+    }
+  </script>
+</body>
+</html>

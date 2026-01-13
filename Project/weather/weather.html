@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline Weather App</title>
+  
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 90px;overflow:hidden;background:conic-gradient(#667eea, #764ba2); 
+     /* background: rgba(0, 0, 0, 0.35); */
+  padding: 30px;
+  margin-left: 370px;
+  border-radius: 16px;
+  width: 300px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    input { padding: 10px; font-size: 18px; }
+    button { padding: 10px; font-size: 18px; margin-left: 10px; }
+    #result { margin-top: 20px; font-size: 20px; }
+  </style>
+</head>
+<body>
+  <h2>🌦️ Weather App</h2>
+  <input type="text" id="city" placeholder="Enter city name">
+  <button onclick="getWeather()">Get Weather</button>
+  <div id="result"></div>
+
+  <script>
+    // Sample offline data
+    const weatherData = {
+      delhi: { temp: 32, condition: "Sunny ☀️" },
+      mumbai: { temp: 30, condition: "Humid 🌤️" },
+      london: { temp: 12, condition: "Cloudy ☁️" },
+      paris: { temp: 15, condition: "Rainy 🌧️" },
+      tokyo: { temp: 22, condition: "Clear 🌞" },
+      shillong: { temp: 15, condition: "Mostly Clear 🌞" }
+    };
+
+    function getWeather() {
+      const cityInput = document.getElementById("city").value.toLowerCase();
+      const result = document.getElementById("result");
+
+      if (weatherData[cityInput]) {
+        const cityWeather = weatherData[cityInput];
+        result.innerHTML = `
+          🌆 City: <b>${cityInput.toUpperCase()}</b><br>
+          🌡️ Temperature: <b>${cityWeather.temp}°C</b><br>
+          ☁️ Condition: ${cityWeather.condition}
+        `;
+      } else {
+        result.textContent = "❌ City not found in offline data.";
+      }
+    }
+  </script>
+</body>
+</html>

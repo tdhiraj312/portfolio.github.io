@@ -2,7 +2,7 @@ body{
 	font-family: GT America;
 	margin:0;
 	padding:20px;
-	background-color: #ffffe6;/* #ffffcc;*/ /*#ffe6e6;*/ /*#f1f1f1;*//*#ffffff;*/
+	/* #ffffcc;*/ /*#ffe6e6;*/ /*#f1f1f1;*//*#ffffff;*/
   
 }
 
@@ -64,9 +64,13 @@ nav{font: normal 16px GT America;}
 }
 #fav{
   padding-left: 8px;
-  padding-top: 7px;
-  width: 45px;
-  height: 45px;
+  margin-bottom: 3px;
+  width: 40px;
+  height: 70px;
+}
+#fav:hover{
+  opacity: 0.6;
+  transition: .5s ease;
 }
 
 *{
@@ -103,7 +107,7 @@ text-align: justify;
 
 .card{
 	
-	background-color: #ffffe6;/*#ffffcc;*/ /*#ffe6e6;*/ /*#ffffff*/
+	/*#ffffcc;*/ /*#ffe6e6;*/ /*#ffffff*/
   margin-top:20px;
 }
 
@@ -122,7 +126,7 @@ text-align: justify;
 
 
 footer{
-	background-color: #ffffe6;/*#ffffcc;*/ /*#ffe6e6;*/ /*#dddddd;*/
+/*#ffffcc;*/ /*#ffe6e6;*/ /*#dddddd;*/
 	padding: 20px;
 	text-align: center;
 	margin-top: 20px;
@@ -266,4 +270,142 @@ footer{
   font-weight: bold;
   color:red;
 }
+
+/* Dark mode overrides */
+body.dark-mode {
+  background-color: #030303 !important;
+  color: #fdfcfc !important;
+}
+
+body.dark-mode .card {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: #fdfcfc !important;
+}
+
+body.dark-mode footer {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: #fdfcfc !important;
+}
+
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #f8fafc !important;
+}
+
+body.dark-mode #intro {
+  border-bottom-color: #f97316 !important; /* Change to orange for dark mode */
+}
+
+body.dark-mode #DHIRAJBLOGS {
+  color: #f97316 !important; /* Change to orange for visibility */
+}
+/* =====================================
+   ABOUT PAGE – DARK MODE VISIBILITY FIX
+   (MATCHES SHOWCASE THEME)
+===================================== */
+
+/* base text visibility */
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li {
+  color: #e5e7eb !important;
+}
+
+/* cards */
+body.dark-mode .card {
+  background: rgba(15, 23, 42, 0.85) !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(148,163,184,0.15);
+}
+
+/* footer */
+body.dark-mode footer {
+  background: rgba(2, 6, 23, 0.9) !important;
+}
+
+/* intro underline */
+body.dark-mode #intro {
+  border-bottom: 1px solid #f97316 !important;
+}
+
+/* blog link */
+body.dark-mode #DHIRAJBLOGS {
+  color: #f97316 !important;
+}
+
+/* links */
+body.dark-mode a {
+  color: #38bdf8 !important;
+}
+/* ===============================
+   MODE TOGGLE — FORCE VISIBILITY
+================================ */
+
+.mode-btn {
+  background: transparent;
+  border: none;
+  padding: 8px;
+}
+
+#modeToggle i {
+  color: #ffffff !important;
+  font-size: 22px;
+  display: inline-block;
+}
+
+/* hover */
+#modeToggle:hover i {
+  color: #0f0f0f !important;
+}
+/* ===============================
+   DT LOGO ALIGNMENT
+================================ */
+
+.navbar-brand {
+  padding: 0 !important;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+#fav {
+  height: 35px;
+  margin-left: 10px;
+}
+/* ===============================
+   FIX EXTRA TOP SPACE ABOVE NAVBAR
+================================ */
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* navbar should touch top */
+.navbar-fixed-top {
+  top: 0 !important;
+}
+/* ===============================
+   OFFSET CONTENT BELOW FIXED NAVBAR
+================================ */
+/* ===============================
+   DARK MODE — REMOVE CARD BACKGROUND
+================================ */
+
+body.dark-mode .card {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* keep text readable */
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #f8fafc !important;
+}
+
 

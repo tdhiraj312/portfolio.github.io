@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!--this will all meta files and css links-->
+
 <head>
   <title>Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,102 +10,122 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="css/typewriter.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="./Project/common/Dark_Light_theme.css">
+
 </head>
-<body>
+
+<body class="light-mode">
+
 
   <!--this will design the navbar-->
-<div class="container">
-  <nav class="navbar navbar-inverse navbar-fixed-top">
 
-    <div class="container-fluid">
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                     </button>
-                     <a href="index.html"><img id="fav" class="image" src="img/LOGO DHIRAJ.jpg"></a>
-              </div> 
-  
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav">
-                    <li class="w3-center"><a href="index.html">HOME</a></li>
-                    <li class="w3-center"><a href="about.html">ABOUT</a></li> 
-                    <li class="w3-center"><a href="contact.html">CONTACT</a></li>  
-                    <li class="w3-center"><a href="myPortfolio.html">PROJECTS</a></li>
-                    <li class="w3-center"><a href="blog.html">BLOGS</a></li>
-                    <li class="w3-center"><a href="myCV.html">RESUME</a></li>
-                    <li class="w3-center"><a href="milestones.html">MILESTONES</a></li>
-                      
-                  </ul>             
-              </div>
+  <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="index.html"><img id="fav" class="image" src="img/LOGO DHIRAJ.jpg"></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="w3-center"><a href="index.html">HOME</a></li>
+            <li class="w3-center"><a href="about.html">ABOUT</a></li>
+            <li class="w3-center"><a href="contact.html">CONTACT</a></li>
+            <li class="w3-center"><a href="myPortfolio.html">PROJECTS</a></li>
+            <li class="w3-center"><a href="blog.html">BLOGS</a></li>
+            <li class="w3-center"><a href="myCV.html">RESUME</a></li>
+            <li class="w3-center"><a href="milestones.html">MILESTONES</a></li>
+            <li class="w3-center"><a href="Showcase.html">SHOWCASE</a></li>
+          </ul>
+
+          <!-- RIGHT CORNER -->
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <button id="modeToggle" class="mode-btn" aria-label="Toggle theme">
+                <i id="modeIcon" class="fa-solid fa-moon"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!--this will add my name-->
+  <div class="bgimg-1">
+    <div class="caption">
+      <span class="image1"><span class="border">DHIRAJ THAKUR</span></span>
     </div>
-  </nav>
-</div>
-
-<!--this will add my name-->
-<div class="bgimg-1">
-  <div class="caption">
-    <span class="image1"><span class="border">DHIRAJ THAKUR</span></span>
   </div>
-</div>
 
-<!--this will add about me section-->
-<div"><br>
-  <h3>About Me</h3>
-  <p>Highly motivated and eager to begin my career as a Java Developer in Gurugram. Recent graduate with a strong foundation in Java programming, data structures, and algorithms. Passionate about learning new technologies and contributing to innovative projects. Seeking a challenging role where I can apply my skills and grow professionally. Quick learner, team player, and ready to contribute to your team's success.</p><br><br>
-</div>
+  <!--this will add about me section-->
+  <div"><br>
+    <h3>About Me</h3>
+    <p>Highly motivated and eager to begin my career as a Java Developer in Gurugram. Recent graduate with a strong
+      foundation in Java programming, data structures, and algorithms. Passionate about learning new technologies
+      and contributing to innovative projects. Seeking a challenging role where I can apply my skills and grow
+      professionally. Quick learner, team player, and ready to contribute to your team's success.</p><br><br>
+    </div>
 
-<!--this will add animated dhiraj thakur-->
-<div class="bgimg-2">
-  <div class="caption">
-    <h3 id="color:#111;"type>Dhiraj Thakur <span id="trick">| The</span> 
-      <span class="txt-type" data-wait="3000" data-words='["Developer", "Designer", "Creator"]'></span>
-    </h3>
-  </div>
-</div>
+    <!--this will add animated dhiraj thakur-->
+    <div class="bgimg-2">
+      <div class="caption">
+        <h3 id="color:#111;" type>Dhiraj Thakur <span id="trick">| The</span>
+          <span class="txt-type" data-wait="3000" data-words='["Developer", "Designer", "Creator"]'></span>
+        </h3>
+      </div>
+    </div>
 
-<!--this will add motivational quotes-->
-<div style="position:relative;">
-  <div>
-    <p id="para1"></b><I>Simplicity is prerequisite for reliability !</I></p>
-  </div>
-</div>
+    <!--this will add motivational quotes-->
+    <div style="position:relative;">
+      <div>
+        <p id="para1"></b><I>Simplicity is prerequisite for reliability !</I></p>
+      </div>
+    </div>
 
-<!--this will add extra motivational quotes-->
-<div class="bgimg-3">
-  <div class="caption">
-    <span class="extramotivation"> DREAM BIG</span><br>
-    <span class="extramotivation">WORK HARDER</span><br>
-    <span class="extramotivation">FOLLOW YOUR GOALS</span>
-  </div>
-</div>
+    <!--this will add extra motivational quotes-->
+    <div class="bgimg-3">
+      <div class="caption">
+        <span class="extramotivation"> DREAM BIG</span><br>
+        <span class="extramotivation">WORK HARDER</span><br>
+        <span class="extramotivation">FOLLOW YOUR GOALS</span>
+      </div>
+    </div>
 
-<!--this will add one more motivational quotes-->
-<div>
-  <div>
-    <p id="para2"><I>Let your work be your signature of pride !</I></p>
-  </div>
-</div>
+    <!--this will add one more motivational quotes-->
+    <div>
+      <div>
+        <p id="para2"><I>Let your work be your signature of pride !</I></p>
+      </div>
+    </div>
 
-<!--this will add social media profile links-->
-<div class="bgimg-1">
-  <div class="caption">
-    <span><span class="border">
-      <a  href="https://www.facebook.com/drajjezz.dezzire" ><i class="fa-brands fa-facebook"></i></a>
-      <a  href="https://x.com/Dhiraj50651453" ><i class="fa-brands fa-twitter"></i></a>
-      <a  href="https://www.instagram.com/being_.t.raj312/" ><i class="fa-brands fa-instagram"></i></a>
-      <a  href="https://github.com/tdhiraj312" ><i class="fa-brands fa-github"></i></a>
-      <a  href="https://www.linkedin.com/in/dhirajthakur312/" ><i class="fa-brands fa-linkedin"></i></a>
-    </span></span>
-  </div>
-</div>
+    <!--this will add social media profile links-->
+    <div class="bgimg-1">
+      <div class="caption">
+        <span><span class="border">
+            <a href="https://www.facebook.com/drajjezz.dezzire"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://x.com/Dhiraj50651453"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.instagram.com/being_.t.raj312/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/tdhiraj312"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/dhirajthakur312/"><i class="fa-brands fa-linkedin"></i></a>
+          </span></span>
+      </div>
+    </div>
 
-<!--this will add javascript and jquery references-->
-<script src="js/typewriter.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!--this will add javascript and jquery references-->
+    <script src="js/typewriter.js"></script>
+    <script src="Project/common/theme.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

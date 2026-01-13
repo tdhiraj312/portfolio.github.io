@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Counter / String Analyzer</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 40px;background:radial-gradient(#667eea, #764ba2);
+  padding: 30px;
+  margin-left: 300px;
+  border-radius: 16px;
+  width: 500px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    textarea { width: 400px; height: 150px; font-size: 16px; padding: 10px; }
+    button { padding: 10px 20px; margin-top: 10px; font-size: 18px; }
+    #result { margin-top: 20px; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h2>🧾 Word Counter / String Analyzer</h2>
+  <textarea id="textInput" placeholder="Type or paste your text here..."></textarea><br>
+  <button onclick="analyzeText()">Analyze</button>
+  <div id="result"></div>
+
+  <script>
+    function analyzeText() {
+      let text = document.getElementById("textInput").value.trim();
+      let result = document.getElementById("result");
+
+      if (text === "") {
+        result.textContent = "⚠️ Please enter some text!";
+        result.style.color = "red";
+        return;
+      }
+
+      let charCount = text.length;
+      let wordCount = text.split(/\s+/).length;
+
+      result.innerHTML = `
+        🧍 Total Words: <b>${wordCount}</b><br>
+        ✏️ Total Characters: <b>${charCount}</b>
+      `;
+      result.style.color = "black";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Bank App</title>
+  <link rel="stylesheet" href="../common/theme.css">
+  <style>
+    /* body { font-family: Arial; text-align: center; margin-top: 60px; background: #f4f4f4; } */
+    input, button { padding: 10px; margin: 5px; font-size: 18px; }
+    #balance { font-size: 24px; margin-top: 20px; }
+    .btn { cursor: pointer; }
+    .deposit { background: #28a745; color: white; border: none; }
+    .withdraw { background: #dc3545; color: white; border: none; }
+  </style>
+</head>
+<body>
+  <div class="game-box">
+  <h2>💰 Simple Bank App</h2>
+  <p>Bank Transaction Details</p>
+
+  <p id="balance">Current Balance: ₹1000</p>
+
+  <input type="number" id="amount" placeholder="Enter amount">
+  <br>
+  <button class="btn deposit" onclick="deposit()">Deposit</button>
+  <button class="btn withdraw" onclick="withdraw()">Withdraw</button>
+
+  <p id="message"></p>
+
+  <div class="message" id="message"></div>
+
+  <!-- <button class="secondary-btn" onclick="reset()">Reset</button>
+</div> -->
+
+  <script>
+    let balance = 1000;
+
+    function deposit() {
+      const amount = Number(document.getElementById("amount").value);
+      const msg = document.getElementById("message");
+
+      if (amount <= 0 || isNaN(amount)) {
+        msg.textContent = "⚠️ Enter a valid amount to deposit!";
+        msg.style.color = "red";
+        return;
+      }
+
+      balance += amount;
+      msg.textContent = `✅ ₹${amount} deposited successfully!`;
+      msg.style.color = "yellow";
+      updateBalance();
+    }
+
+    function withdraw() {
+      const amount = Number(document.getElementById("amount").value);
+      const msg = document.getElementById("message");
+
+      if (amount <= 0 || isNaN(amount)) {
+        msg.textContent = "⚠️ Enter a valid amount to withdraw!";
+        msg.style.color = "red";
+        return;
+      }
+
+      if (amount > balance) {
+        msg.textContent = "❌ Insufficient balance!";
+        msg.style.color = "red";
+        return;
+      }
+
+      balance -= amount;
+      msg.textContent = `💸 ₹${amount} withdrawn successfully!`;
+      msg.style.color = "orange";
+      updateBalance();
+    }
+
+    function updateBalance() {
+      document.getElementById("balance").textContent = `Current Balance: ₹${balance}`;
+      document.getElementById("amount").value = "";
+    }
+    
+  </script>
+</body>
+</html>

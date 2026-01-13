@@ -7,7 +7,8 @@
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="./Project/common/Dark_Light_theme.css">
 
 <style>
   html {
@@ -15,11 +16,13 @@
   }
 </style>
 
-<body>
+<body class="light-mode">
+<div class="star-layer"></div>
+<div class="shooting-star"></div>
 
   <!--Navbar-->
   <!-- <div id="header"></div> -->
-  <div class="container">
+  
     <nav class="navbar navbar-inverse navbar-fixed-top">
 
       <div class="container-fluid">
@@ -45,6 +48,14 @@
             <li class="w3-center"><a href="blog.html">BLOGS</a></li>
             <li class="w3-center"><a href="myCV.html">RESUME</a></li>
             <li class="w3-center"><a href="milestones.html">MILESTONES</a></li>
+             <li class="w3-center"><a href="Showcase.html">SHOWCASE</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <button id="modeToggle" class="mode-btn" aria-label="Toggle theme">
+                <i id="modeIcon" class="fa-solid fa-moon"></i>
+              </button>
+            </li>
           </ul>
         </div>
       </div>
@@ -213,6 +224,8 @@
     <a href="WorkInProgress.html"><button class="w3-button w3-black w3-padding-large w3-margin-bottom"><span
           id="Next">Next</span></button></a>
   </footer>
+  <div id="backToTop">↑</div>
+
 
   <!-- Note: &raquo; » double right angle quote
 &laquo; « double left angle quote -->
@@ -274,6 +287,26 @@
         }
       });
   </script>
+  <script>
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.style.display = "flex";
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+<script src="Project/common/theme.js"></script>
 </body>
 
 </html>

@@ -1,78 +1,951 @@
+/* =========================
+   BUTTONS & SECTIONS
+========================= */
 .btn {
-    background-color: DodgerBlue;
-    color: white;
-    padding: 8px 20px;
-    cursor: pointer;
-    font-size: 15px;
-    margin-left: 100px;
-     }
-
-  .resume{
-    padding-right: 100px;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    text-align: center;
-  }
-  .resume-download{
-    padding-bottom: 40px;
-    
-  }
-  .certificates{
-    padding-bottom: 10px;
-  }
-  
-  /* Darker background on mouse-over */
-  .btn:hover {
-    background-color: RoyalBlue;
-  }
-
-  html,body,h1,h2,h3,h4,h5,h6 {font-family: GT America;}
-
-  .body{
-      font: normal 16px GT America;
-      padding-top: 50px;
-      text-align: justify;
-      padding-bottom: 200px;
-      margin-top: 100px;
-    
-  }
-
-  .nav{font: normal 16px GT America;}
-#name{
-
-
-	color : rgba(0,0,0,0.6);
+  background-color: DodgerBlue;
+  color: white;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 100px;
 }
 
-#img{
-	padding-bottom: 60px;
-  padding-left: 35px;
-  padding-top: 25px;
+.btn:hover {
+  background-color: RoyalBlue;
 }
 
+.resume {
+  padding-right: 100px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.resume-download {
+  padding-bottom: 40px;
+}
+
+.certificates {
+  padding-bottom: 10px;
+}
+
+/* =========================
+   FONTS & BASE
+========================= */
+html, body, h1, h2, h3, h4, h5, h6 {
+  font-family: GT America;
+}
+
+.body {
+  font: normal 16px GT America;
+  padding-top: 50px;
+  text-align: justify;
+  padding-bottom: 200px;
+  margin-top: 100px;
+}
+
+.nav {
+  font: normal 16px GT America;
+}
+
+#name {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+   PROFILE IMAGE (FINAL SAFE)
+========================= */
+.view.overlay.zoom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+/* ===============================
+   FORCE PROFILE IMAGE FIX
+   (OVERRIDES INLINE STYLE)
+   =============================== */
+
+#img {
+  width: 140px !important;     /* overrides style="width:90%" */
+  height: 140px !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  display: block !important;
+  background: #ffffff !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25) !important;
+}
+
+/* Center inside card */
+.view.overlay.zoom {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Dark mode polish */
+body.dark-mode #img {
+  background: #020617 !important;
+  box-shadow: 0 10px 22px rgba(96,165,250,0.35) !important;
+}
+
+
+/* =========================
+   NAVBAR & LOGO
+========================= */
 .image {
   opacity: 1;
   display: block;
   width: 100%;
   height: auto;
-  transition: .5s ease;
+  transition: 0.5s ease;
   backface-visibility: hidden;
-  float:right;
-
+  float: right;
 }
 
 .image:hover {
   opacity: 0.3;
 }
 
-#fav{
+#fav {
   padding-left: 8px;
   padding-top: 7px;
   width: 45px;
   height: 45px;
 }
 
-#footer{
+/* =========================
+   FOOTER
+========================= */
+#footer {
   color: black;
 }
+
+/* =========================
+   MODE TOGGLE (RESUME PAGE)
+========================= */
+#modeToggle {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  padding: 8px 12px;
+  cursor: pointer;
+  position: relative;
+  z-index: 9999;
+}
+
+#modeToggle i {
+  font-size: 22px;
+  color: #ffffff !important;
+}
+
+#modeToggle:hover i {
+  transform: rotate(20deg);
+  transition: transform 0.3s ease;
+}
+
+/* Ensure navbar stays above effects */
+.navbar,
+.navbar * {
+  position: relative;
+  z-index: 5;
+}
+
+/* =========================
+   DARK MODE – HARD FIX
+========================= */
+body.dark-mode .w3-card,
+body.dark-mode .w3-card-4,
+body.dark-mode .w3-white {
+  background-color: #020617 !important;
+  color: #e5e7eb !important;
+}
+
+body.dark-mode h2,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode #name {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .w3-text-grey {
+  color: #cbd5f5 !important;
+}
+
+body.dark-mode .w3-text-teal {
+  color: #38bdf8 !important;
+}
+
+body.dark-mode .w3-card .fa {
+  color: #38bdf8 !important;
+}
+
+body.dark-mode .w3-light-grey {
+  background-color: #1e293b !important;
+}
+
+body.dark-mode .w3-teal {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .btn {
+  background-color: #2563eb !important;
+}
+
+body.dark-mode .btn:hover {
+  background-color: #1d4ed8 !important;
+}
+
+/* =========================
+   CARD HOVER GLOW
+========================= */
+.w3-card,
+.w3-card-4 {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.w3-card:hover,
+.w3-card-4:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+}
+
+body.dark-mode .w3-card:hover,
+body.dark-mode .w3-card-4:hover {
+  box-shadow: 0 14px 38px rgba(96, 165, 250, 0.35);
+}
+
+/* =========================
+   SMOOTH THEME TRANSITION
+========================= */
+body,
+.w3-card,
+.w3-card-4,
+.w3-white,
+h2, h5, h6, p, li, i {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+/* ==================================
+   PROFILE IMAGE SIZE & ALIGN FIX
+   ================================== */
+
+/* Center image block and add spacing below */
+.view.overlay.zoom {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-top: 25px !important;
+  padding-bottom: 35px !important; /* pushes content down */
+}
+
+/* Image size increased (still round) */
+#img {
+  width: 280px !important;     /* increased */
+  height: 280px !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  display: block !important;
+  background: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25) !important;
+}
+
+/* Dark mode consistency */
+body.dark-mode #img {
+  background: #020617 !important;
+  
+  box-shadow: 0 12px 28px rgba(96,165,250,0.4) !important;
+}
+
+/* Push name slightly down */
+#name {
+  padding-top: 10% !important;
+  margin-top: 50% !important;
+}
+/* ------------------------------------------------------------------------------------- */
+/* =====================================================
+   RESUME UI ANIMATIONS – FINAL COMBINED FILE
+   (Safe • Professional • Smooth)
+===================================================== */
+
+/* -------------------------------
+   1. PAGE LOAD FADE-IN
+-------------------------------- */
+body {
+  animation: pageFade 0.8s ease-out both;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------
+   2. CARD REVEAL ANIMATION
+-------------------------------- */
+.w3-card,
+.w3-card-4 {
+  animation: cardReveal 0.9s ease both;
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------
+   3. PROFILE IMAGE ENTRANCE
+-------------------------------- */
+
+
+@keyframes imagePop {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* -------------------------------
+   4. CARD HOVER MICRO-MOTION
+-------------------------------- */
+.w3-card,
+.w3-card-4 {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.w3-card:hover,
+.w3-card-4:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+
+/* -------------------------------
+   5. SKILL BAR FILL ANIMATION
+-------------------------------- */
+.w3-teal {
+  animation: skillFill 1.2s ease-out both;
+}
+
+@keyframes skillFill {
+  from {
+    width: 0;
+  }
+}
+
+/* -------------------------------
+   6. ICON MICRO HOVER
+-------------------------------- */
+.w3-card i {
+  transition: transform 0.25s ease;
+}
+
+.w3-card i:hover {
+  transform: scale(1.15);
+}
+
+/* -------------------------------
+   7. SMOOTH THEME TRANSITION
+-------------------------------- */
+body,
+.w3-card,
+.w3-card-4,
+.w3-white,
+h2, h5, h6, p, li, i {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+/* =================================================
+   HARD STOP SCROLL AFTER FOOTER (FINAL FIX)
+================================================= */
+
+/* Prevent any horizontal or vertical overflow */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Ensure body height ends with content */
+body {
+  min-height: auto !important;
+  height: auto !important;
+  overflow-y: auto;
+}
+
+/* Footer must be the last visible section */
+footer {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 0 !important;
+  padding-bottom: 16px;
+}
+
+/* Kill any pseudo elements adding height */
+body::before,
+body::after {
+  content: none !important;
+}
+
+/* Clamp any background / animation layers */
+.star-layer,
+.shooting-star,
+canvas,
+#star-bg {
+  position: fixed !important;
+  inset: 0 !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+  pointer-events: none;
+}
+/* =====================================
+   3D PROFILE IMAGE EFFECT
+===================================== */
+
+/* =====================================
+   3D IMAGE – DEPTH & LIGHT EFFECT
+===================================== */
+
+.view.overlay.zoom {
+  perspective: 900px;
+}
+
+#img {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.15s ease-out,
+    box-shadow 0.15s ease-out;
+}
+
+/* Light reflection layer */
+#img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255,255,255,0.35),
+    transparent 55%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.view.overlay.zoom:hover #img::before {
+  opacity: 1;
+}
+/* =====================================
+   CURSOR FOLLOW GLOW (PREMIUM)
+===================================== */
+
+.view.overlay.zoom {
+  position: relative;
+}
+
+#img {
+  position: relative;
+  z-index: 2;
+}
+
+/* Glow layer */
+#img::after {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(96,165,250,0.45),
+    rgba(96,165,250,0.15),
+    transparent 60%
+  );
+  opacity: 0;
+  filter: blur(14px);
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.view.overlay.zoom:hover #img::after {
+  opacity: 1;
+}
+
+/* Dark mode polish */
+body.dark-mode #img::after {
+  background: radial-gradient(
+    circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(96,165,250,0.65),
+    rgba(56,189,248,0.25),
+    transparent 60%
+  );
+}
+/* ----------------------------------------------------------------------------- */
+/* ------------------------------------------ */
+/* ===================================================
+   SURPRISE: HOLOGRAPHIC SHIMMER CARDS
+=================================================== */
+
+.w3-card,
+.w3-card-4 {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer layer */
+.w3-card::after,
+.w3-card-4::after {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -120%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(255,255,255,0.35),
+    rgba(96,165,250,0.35),
+    transparent 60%
+  );
+  transform: rotate(25deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Activate shimmer on hover */
+.w3-card:hover::after,
+.w3-card-4:hover::after {
+  opacity: 1;
+  animation: hologramSweep 1.4s ease-in-out;
+}
+
+/* Sweep animation */
+@keyframes hologramSweep {
+  0% {
+    transform: translateX(-60%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(60%) rotate(25deg);
+  }
+}
+
+/* Dark mode richer hologram */
+body.dark-mode .w3-card::after,
+body.dark-mode .w3-card-4::after {
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(96,165,250,0.45),
+    rgba(56,189,248,0.45),
+    transparent 60%
+  );
+}
+/* ===================================================
+   SURPRISE #2: LIQUID GRADIENT FLOW CARDS
+=================================================== */
+
+/* Inner liquid layer */
+.w3-card::before,
+.w3-card-4::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(96,165,250,0.15),
+    rgba(56,189,248,0.15),
+    rgba(99,102,241,0.15),
+    rgba(96,165,250,0.15)
+  );
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+/* Activate liquid motion */
+.w3-card:hover::before,
+.w3-card-4:hover::before {
+  opacity: 1;
+  animation: liquidFlow 4s ease infinite;
+}
+
+/* Flow animation */
+@keyframes liquidFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Keep content above liquid */
+.w3-card > *,
+.w3-card-4 > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Dark mode richer liquid */
+body.dark-mode .w3-card::before,
+body.dark-mode .w3-card-4::before {
+  background: linear-gradient(
+    120deg,
+    rgba(96,165,250,0.25),
+    rgba(56,189,248,0.25),
+    rgba(129,140,248,0.25),
+    rgba(96,165,250,0.25)
+  );
+}
+/* =====================================================
+   GO INSANE — ULTIMATE CARD EFFECT STACK
+===================================================== */
+
+.w3-card,
+.w3-card-4 {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+/* ===============================
+   1. MAGNETIC PULL (HOVER)
+=============================== */
+.w3-card:hover,
+.w3-card-4:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.35);
+}
+
+/* ===============================
+   2. RGB EDGE MORPHING
+=============================== */
+.w3-card::before,
+.w3-card-4::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background: linear-gradient(
+    120deg,
+    #00f5ff,
+    #7c7cff,
+    #ff5ef7,
+    #00f5ff
+  );
+  background-size: 300% 300%;
+  animation: rgbShift 8s linear infinite;
+  opacity: 0.65;
+  z-index: 0;
+}
+
+@keyframes rgbShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* Mask RGB to border only */
+.w3-card::before,
+.w3-card-4::before {
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 2px;
+}
+
+/* ===============================
+   3. GLASS REFRACTION SHIMMER
+=============================== */
+.w3-card::after,
+.w3-card-4::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255,255,255,0.25),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.w3-card:hover::after,
+.w3-card-4:hover::after {
+  opacity: 1;
+}
+
+/* ===============================
+   4. ELECTRIC PULSE (CLICK)
+=============================== */
+.w3-card:active,
+.w3-card-4:active {
+  animation: electricPulse 0.4s ease;
+}
+
+@keyframes electricPulse {
+  0%   { box-shadow: 0 0 0 rgba(96,165,250,0); }
+  50%  { box-shadow: 0 0 40px rgba(96,165,250,0.8); }
+  100% { box-shadow: 0 0 0 rgba(96,165,250,0); }
+}
+
+/* ===============================
+   5. CONTENT SAFETY
+=============================== */
+.w3-card > *,
+.w3-card-4 > * {
+  position: relative;
+  z-index: 1;
+}
+/* =====================================================
+   PERFORMANCE SMOOTHING (CRITICAL)
+===================================================== */
+
+/* GPU acceleration */
+.w3-card,
+.w3-card-4 {
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Slow down RGB edge animation */
+.w3-card::before,
+.w3-card-4::before {
+  animation-duration: 16s !important; /* was 8s */
+}
+
+/* Disable shimmer when not hovering */
+.w3-card::after,
+.w3-card-4::after {
+  opacity: 0;
+}
+
+.w3-card:hover::after,
+.w3-card-4:hover::after {
+  opacity: 1;
+}
+
+/* Reduce hover scale slightly */
+.w3-card:hover,
+.w3-card-4:hover {
+  transform: scale(1.02); /* was 1.03 */
+}
+
+/* Reduce shadow blur */
+.w3-card:hover,
+.w3-card-4:hover {
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+/* ===================================================
+   NEW SURPRISE: CUT-CORNER + NOISE CARDS
+=================================================== */
+
+/* Base card refinement */
+.w3-card,
+.w3-card-4 {
+  position: relative;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  overflow: hidden;
+}
+
+/* Dark mode base */
+body.dark-mode .w3-card,
+body.dark-mode .w3-card-4 {
+  background: #020617;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+}
+
+/* ===============================
+   CUT CORNER EFFECT
+=============================== */
+.w3-card::before,
+.w3-card-4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(
+    135deg,
+    transparent 50%,
+    rgba(0,0,0,0.12) 50%
+  );
+  z-index: 2;
+}
+
+body.dark-mode .w3-card::before,
+body.dark-mode .w3-card-4::before {
+  background: linear-gradient(
+    135deg,
+    transparent 50%,
+    rgba(255,255,255,0.12) 50%
+  );
+}
+
+/* ===============================
+   SUBTLE NOISE TEXTURE
+=============================== */
+.w3-card::after,
+.w3-card-4::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Content above effects */
+.w3-card > *,
+.w3-card-4 > * {
+  position: relative;
+  z-index: 3;
+}
+/* ===================================================
+   NEW SURPRISE: VERTICAL ACCENT SPINE CARDS
+=================================================== */
+
+/* Base card */
+.w3-card,
+.w3-card-4 {
+  position: relative;
+  padding-left: 22px; /* space for spine */
+}
+
+/* Accent spine */
+.w3-card::before,
+.w3-card-4::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(
+    to bottom,
+    #3b82f6,
+    #06b6d4
+  );
+  opacity: 0.9;
+}
+
+/* Dark mode spine */
+body.dark-mode .w3-card::before,
+body.dark-mode .w3-card-4::before {
+  background: linear-gradient(
+    to bottom,
+    #60a5fa,
+    #38bdf8
+  );
+}
+
+/* Subtle hover emphasis */
+.w3-card:hover::before,
+.w3-card-4:hover::before {
+  filter: brightness(1.25);
+}
+
+/* Keep content above spine */
+.w3-card > *,
+.w3-card-4 > * {
+  position: relative;
+  z-index: 1;
+}
+/* ===================================================
+   NEW SURPRISE: STACKED CARD DEPTH
+=================================================== */
+
+.w3-card,
+.w3-card-4 {
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+/* Dark mode base */
+body.dark-mode .w3-card,
+body.dark-mode .w3-card-4 {
+  background: #020617;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.75);
+}
+
+/* Layer 1 */
+.w3-card::before,
+.w3-card-4::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  border-radius: inherit;
+  transform: translate(10px, 10px);
+  z-index: -1;
+  opacity: 0.25;
+}
+
+/* Layer 2 */
+.w3-card::after,
+.w3-card-4::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  border-radius: inherit;
+  transform: translate(20px, 20px);
+  z-index: -2;
+  opacity: 0.12;
+}
+
+/* Hover: tighten layers */
+.w3-card:hover::before,
+.w3-card-4:hover::before {
+  transform: translate(6px, 6px);
+}
+
+.w3-card:hover::after,
+.w3-card-4:hover::after {
+  transform: translate(12px, 12px);
+}
+
 

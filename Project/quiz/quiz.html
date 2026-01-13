@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Quiz App</title>
+  <link rel="stylesheet" href="../common/theme.css">
+  <style>
+    body { font-family: Arial; text-align: center;overflow:hidden }
+    #quiz-box { width: 300px; }
+    button { margin-top: 15px; padding: 8px 16px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  
+  <div id="quiz-box">
+    <h2>🧠 JavaScript Quiz</h2>
+    <p id="question"></p>
+    <button id="option1"></button><br>
+    <button id="option2"></button><br>
+    <button id="option3"></button><br>
+    <button id="option4"></button><br>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    let questions = [
+      {
+        question: "Which company created JavaScript?",
+        options: ["Microsoft", "Netscape", "Google", "Apple"],
+        correct: "Netscape"
+      },
+      {
+        question: "Which symbol is used for comments in JS?",
+        options: ["//", "/*", "<!--", "#"],
+        correct: "//"
+      },
+      {
+        question: "What does DOM stand for?",
+        options: ["Document Object Model", "Data Object Mode", "Display Object Management", "Digital Ordinance Model"],
+        correct: "Document Object Model"
+      }
+    ];
+
+    let current = 0;
+
+    function loadQuestion() {
+      let q = questions[current];
+      document.getElementById("question").textContent = q.question;
+      document.getElementById("option1").textContent = q.options[0];
+      document.getElementById("option2").textContent = q.options[1];
+      document.getElementById("option3").textContent = q.options[2];
+      document.getElementById("option4").textContent = q.options[3];
+      document.getElementById("result").textContent = "";
+    }
+
+    function checkAnswer(answer) {
+      let correctAnswer = questions[current].correct;
+      if (answer === correctAnswer) {
+        document.getElementById("result").textContent = "✅ Correct!";
+      } else {
+        document.getElementById("result").textContent = "❌ Wrong! Correct answer: " + correctAnswer;
+      }
+
+      current++;
+      if (current < questions.length) {
+        setTimeout(loadQuestion, 1500);
+      } else {
+        setTimeout(() => {
+          document.getElementById("quiz-box").innerHTML = "<h3>🎉 Quiz Completed!</h3>";
+        }, 1500);
+      }
+    }
+
+    document.getElementById("option1").onclick = () => checkAnswer(document.getElementById("option1").textContent);
+    document.getElementById("option2").onclick = () => checkAnswer(document.getElementById("option2").textContent);
+    document.getElementById("option3").onclick = () => checkAnswer(document.getElementById("option3").textContent);
+    document.getElementById("option4").onclick = () => checkAnswer(document.getElementById("option4").textContent);
+
+    loadQuestion();
+  </script>
+</body>
+</html>

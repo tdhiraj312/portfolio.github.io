@@ -64,7 +64,7 @@ body.dark-mode .navbar-inverse {
    MODE ICON
 ================================ */
 #modeToggle i {
-  font-size: 24px;
+  font-size: 25px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -130,7 +130,7 @@ body.dark-mode::after {
   background: none;
   border: none;
   outline: none;
-  padding: 15px;
+  padding: 5px;
   cursor: pointer;
 }
 
@@ -197,3 +197,99 @@ body.dark-mode::after {
     transform: translate3d(120vw, 120vh, 0);
   }
 }
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #f8fafc;
+}
+/* ===============================
+   FORCE SHOWCASE NAVBAR STYLE
+   ON ALL PAGES (DARK MODE)
+================================ */
+
+body.dark-mode .navbar.navbar-inverse {
+  background: linear-gradient(
+    90deg,
+    #000000,
+    #b45309,
+    #f97316
+  ) !important;
+
+  box-shadow: 0 0 30px rgba(249, 115, 22, 0.8) !important;
+  border: none !important;
+}
+
+/* Active / hover menu item like Showcase */
+body.dark-mode .navbar-inverse .navbar-nav > li > a {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .navbar-inverse .navbar-nav > li > a:hover,
+body.dark-mode .navbar-inverse .navbar-nav > .active > a {
+  background: rgba(0, 0, 0, 0.6) !important;
+  color: #ffffff !important;
+  border-radius: 4px;
+}
+/* ===============================
+   FORCE MODE TOGGLE VISIBILITY
+================================ */
+
+#modeToggle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+#modeToggle i {
+  color: #ffffff !important;   /* SHOW ICON */
+  font-size: 22px;
+}
+
+/* hover glow */
+#modeToggle:hover i {
+  color: #181817 !important;
+}
+/* ===============================
+   NAVBAR LOGO ALIGNMENT FIX
+================================ */
+
+.navbar-brand {
+  padding: 0 !important;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+#fav {
+  height: 38px;
+  width: auto;
+  margin-left: 10px;
+}
+/* ===============================
+   FINAL NAVBAR SPACE FIX
+================================ */
+
+/* remove bootstrap bottom gap */
+.navbar {
+  margin-bottom: 0 !important;
+}
+
+/* remove fake glow spacing */
+body.dark-mode .navbar::before,
+body.dark-mode .navbar::after {
+  content: none !important;
+}
+
+/* ensure navbar height is tight */
+.navbar-inverse {
+  min-height: 50px !important;
+}
+
+/* center items vertically */
+.navbar-nav > li > a {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+

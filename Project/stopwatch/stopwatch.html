@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 100px;background: linear-gradient(#667eea, #764ba2); }
+    #time { font-size: 40px; margin-bottom: 20px; }
+    button { font-size: 18px; padding: 10px 20px; margin: 5px; }
+  </style>
+</head>
+<body>
+  <h2>⏱️ JavaScript Stopwatch</h2>
+  <div id="time">00:00:00</div>
+  <button onclick="startTimer()">Start</button>
+  <button onclick="stopTimer()">Stop</button>
+  <button onclick="resetTimer()">Reset</button>
+
+  <script>
+    let seconds = 0;
+    let minutes = 0;
+    let hours = 0;
+    let timer = null;
+
+    function displayTime() {
+      let h = hours < 10 ? "0" + hours : hours;
+      let m = minutes < 10 ? "0" + minutes : minutes;
+      let s = seconds < 10 ? "0" + seconds : seconds;
+      document.getElementById("time").textContent = h + ":" + m + ":" + s;
+    }
+
+    function startTimer() {
+      if (timer !== null) return; // prevent multiple intervals
+      timer = setInterval(() => {
+        seconds++;
+        if (seconds === 60) {
+          seconds = 0;
+          minutes++;
+          if (minutes === 60) {
+            minutes = 0;
+            hours++;
+          }
+        }
+        displayTime();
+      }, 1000);
+    }
+
+    function stopTimer() {
+      clearInterval(timer);
+      timer = null;
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = null;
+      seconds = 0;
+      minutes = 0;
+      hours = 0;
+      displayTime();
+    }
+  </script>
+</body>
+</html>

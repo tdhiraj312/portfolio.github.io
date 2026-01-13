@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade Calculator</title>
+    <link rel="stylesheet" href="../common/theme.css">
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 10px; 
+    overflow: hidden;margin-bottom: 50px;
+    }
+    input, button { padding: 10px; font-size: 18px; margin: 5px; }
+    #result { font-size: 20px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h2>🧮 Grade Calculator</h2>
+  <input type="number" id="marks" placeholder="Enter marks out of 100">
+  <button onclick="calculateGrade()">Check Grade</button>
+  <div id="result"></div>
+
+  <script>
+    function calculateGrade() {
+      let marks = Number(document.getElementById("marks").value);
+      let result = document.getElementById("result");
+      let grade;
+
+      // ✅ Input validation
+      if (marks < 0 || marks > 100 || isNaN(marks)) {
+        result.innerHTML = "⚠️ Please enter valid marks between 0 and 100!";
+        result.style.color = "yellow";
+        return;
+      }
+
+      // ✅ Grade calculation
+      if (marks >= 90) grade = "A+";
+      else if (marks >= 80) grade = "A";
+      else if (marks >= 70) grade = "B";
+      else if (marks >= 60) grade = "C";
+      else if (marks >= 50) grade = "D";
+      else grade = "Fail";
+
+      // ✅ Show result
+      result.innerHTML = `You scored <b>${marks}</b> marks.<br>Your Grade: <b>${grade}</b>`;
+      result.style.color = "black";
+    }
+  </script>
+</body>
+</html>

@@ -1,103 +1,177 @@
 <!DOCTYPE html>
-<html>
-<title>My Contact</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/ContactForm.css">
+<html lang="en">
+<head>
+  <title>My Contact</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<body>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
-   <!--Navbar-->
-   <!-- <div id="header"></div> -->
-<div class="container">
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <!-- W3 -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <div class="container-fluid">
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                     </button>
-                     <a href="index.html"><img id="fav" class="image" src="img/LOGO DHIRAJ.jpg"></a>
-              </div> 
-  
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                  <li class="w3-center"><a href="index.html">HOME</a></li>
-                  <li class="w3-center"><a href="about.html">ABOUT</a></li> 
-                  <li class="w3-center"><a href="contact.html">CONTACT</a></li>  
-                </ul><ul class="nav navbar-nav">
-                  <li class="w3-center"><a href="myPortfolio.html">PROJECTS</a></li>
-                  <li class="w3-center"><a href="blog.html">BLOGS</a></li>
-                  <li class="w3-center"><a href="myCV.html">RESUME</a></li>
-                  <li class="w3-center"><a href="milestones.html">MILESTONES</a></li>     
-                </ul>
-            </div>
+  <!-- Font Awesome (FIXED – REQUIRED FOR TOGGLE) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" type="text/css" href="css/ContactForm.css">
+
+  <!-- Dark / Light Theme -->
+  <link rel="stylesheet" href="Project/common/Dark_Light_theme.css">
+</head>
+
+<body class="light-mode">
+
+<!-- STAR BACKGROUND (same as other pages) -->
+<div class="star-layer"></div>
+<div class="shooting-star"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#mainNav">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="index.html">
+        <img id="fav" src="img/LOGO DHIRAJ.jpg" alt="DT Logo">
+      </a>
     </div>
-  </nav>
-</div>
-  <!--End of Navbar-->
 
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li class="active"><a href="contact.html">CONTACT</a></li>
+        <li><a href="myPortfolio.html">PROJECTS</a></li>
+        <li><a href="blog.html">BLOGS</a></li>
+        <li><a href="myCV.html">RESUME</a></li>
+        <li><a href="milestones.html">MILESTONES</a></li>
+        <li><a href="Showcase.html">SHOWCASE</a></li>
+      </ul>
+
+      <!-- MODE TOGGLE -->
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <button id="modeToggle" class="mode-btn" aria-label="Toggle theme">
+            <i id="modeIcon" class="fa-solid fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- PAGE CONTENT -->
 <h1 class="w3-center" id="top"><strong>Let's <span id="sec">Connect</span></strong></h1>
-<p id="para">I'm currently available for freelance projects or full-time work. If you're interested in working with me, please get in touch using one of the methods below. Or feel free to say hi. I like that too.</p>
+<p id="para">
+  I'm currently available for freelance projects or full-time work.
+  If you're interested in working with me, please get in touch.
+</p>
+
 <div class="row">
-      <div class="left-column">
+  <div class="left-column">
+    <div class="card">
+      <h2 class="form1"><strong>Have a Project in mind?</strong></h2>
 
-            <div class="card">
-              
-              <h2 class="form1"><strong>Have a Project in mind?</strong></h2>
-
-              <form action="https://formspree.io/mqkyqbng" method="POST">
-
-                  <label for="fname">Name</label><br>
-                  <input type="text" id="name" name="name" class="w3-padding" placeholder="your name..." required><br>
-
-                  <label for="email">Email</label><br>
-                  <input type="text" id="email" name="email" placeholder="Example@gmail.com" required><br>
-
-                  <label for="subject">Subject</label><br>
-                  <input type="text" id="subject" name="subject" placeholder="your subject..." required><br>
-
-                  <label for="subject">Message</label><br>
-                  <textarea id="subject" class="w3-padding" name="subject" placeholder="Write something.." style="height:170px" required></textarea><br>
-
-                  <input id="submit" type="submit" value="Submit">
-              </form>
-              
-            </div>
-      </div>
-
-
-      <div class="right-column">
-
-          <div class="card">
-           <h2 id="form2"><strong>Contact me directly</strong></h2>
-           <p id="footer1"><i class="fa fa-user" aria-hidden="true">Dhiraj Thakur</i><br><i class="fa fa-map-marker" aria-hidden="true">Gurugram, India</i><br><i class="fa fa-envelope" aria-hidden="true">tdhiraj312@gmail.com</i><br><i class="fa fa-phone-square" aria-hidden="true"> +91-9383299845</i></p>
-           <h2 id="form2" id="follow"><strong>Follow me Online</strong></h2>
-           <a  href="https://www.facebook.com/drajjezz.dezzire" ><i class="fa fa-facebook-official   w3-hover-opacity w3-large" id="footer"></i>  facebook</a><br>
-           <a  href="https://x.com/Dhiraj50651453"  ><i class="fa fa-twitter  w3-hover-opacity w3-large" id="footer"></i>  twitter</a><br>
-           <a  href="https://www.instagram.com/being_.t.raj312/" ><i class="fa fa-instagram  w3-hover-opacity w3-large" id="footer"></i>  instagram</a><br>
-           <a  href="https://github.com/tdhiraj312" ><i class="fa fa-github w3-hover-opacity  w3-large" id="footer"></i>  github</a><br>
-           <a  href="https://www.linkedin.com/in/dhirajthakur312/" ><i class="fa fa-linkedin  w3-hover-opacity w3-large" id="footer"></i>   linkedin</a>
-           <br><br><br><br><br>
-           <br><br><br><br><br>
-           <br><br><br><br>
+      <form action="https://formspree.io/mqkyqbng" method="POST">
+      <div class="field">
+            <input type="text" name="name" required placeholder=" ">
+            <label><i class="fa fa-user"></i> Name</label>
           </div>
-      </div>
 
+          <div class="field">
+            <input type="text" name="email" required placeholder=" ">
+            <label><i class="fa fa-envelope"></i> Email</label>
+          </div>
+
+          <div class="field">
+            <input type="text" name="subject" required placeholder=" ">
+            <label><i class="fa fa-tag"></i> Subject</label>
+          </div>
+
+          <div class="field">
+            <textarea name="message" required placeholder=" "></textarea>
+            <label><i class="fa fa-comment"></i> Message</label>
+          </div>
+
+         <div class="form-actions">
+           <input type="submit" id="submit" value="Submit">
+           <button type="button" id="clearBtn">Clear</button>
+        </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="right-column">
+    <div class="card">
+      <h2 id="form2"><strong>Contact me directly</strong></h2>
+
+      <p id="footer1">
+        <i class="fa fa-user"></i> Dhiraj Thakur<br>
+        <i class="fa fa-map-marker"></i> Gurugram, India<br>
+        <i class="fa fa-envelope"></i> tdhiraj312@gmail.com<br>
+        <i class="fa fa-phone"></i> +91-9383299845
+      </p>
+
+      <h2 id="form2"><strong>Follow me Online</strong></h2>
+
+     <div class="social-grid">
+   <a href="https://www.facebook.com/drajjezz.dezzire"><i class="fa-brands fa-facebook"></i></a>
+  <a href="https://www.linkedin.com/in/dhirajthakur312/"><i class="fa fa-linkedin"></i></a>
+  <a href="https://www.instagram.com/being_.t.raj312/"><i class="fa fa-instagram"></i></a>
+  <a href="https://x.com/Dhiraj50651453"><i class="fa fa-twitter"></i></a>
+</div>
+
+    </div>
+  </div>
 </div>
 
 <footer class="w3-center">
-   <h5><i class="fa fa-copyright" aria-hidden="true"> 2025 Created by Dhiraj Thakur , All Rights Reserved</i></h5>
+  <h5>© 2025 Created by Dhiraj Thakur</h5>
 </footer>
+<!-- SUCCESS TOAST -->
+<div id="successToast">
+  <i class="fa fa-check-circle"></i>
+  <span>Message sent successfully!</span>
+</div>
+
+<!-- JS -->
+
+<script>
+  const form = document.querySelector("form");
+  const toast = document.getElementById("successToast");
+  const clearBtn = document.getElementById("clearBtn");
+
+  // Clear button
+  clearBtn.addEventListener("click", () => {
+    form.reset();
+  });
+
+  // Success animation (no backend break)
+  form.addEventListener("submit", () => {
+    setTimeout(() => {
+      toast.classList.add("show");
+      form.reset();
+      setTimeout(() => toast.classList.remove("show"), 3500);
+    }, 600);
+  });
+</script>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="Project/common/theme.js"></script>
+
 </body>
 </html>
