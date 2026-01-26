@@ -219,6 +219,7 @@ body.modal-open .navbar {
   text-align: center;
   box-shadow: 0 15px 40px rgba(0,0,0,0.4);
   animation: popupFade 0.3s ease;
+  color: #111;
 }
 
 .mode-popup-box p {
@@ -240,12 +241,13 @@ body.modal-open .navbar {
    FIX POPUP TEXT IN DARK MODE
 ================================ */
 .mode-popup-box {
-  color: #111;            /* ensure text visible */
+  color: #111 !important;            /* ensure text visible */
   background: #ffffff;   /* force white background */
 }
 
 body.dark-mode .mode-popup-box {
-  color: #111;            /* override dark inheritance */
+  color: #111 !important;            /* ensure text visible */
+  background: #eeeded;        /* override dark inheritance */
 }
 
 /* ===============================
